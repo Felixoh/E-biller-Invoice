@@ -1,0 +1,147 @@
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <!-- invoice box container -->
+            <div class="col-lg-8 mt-5 invoice-box">
+                <!-- wrapper around logo -->
+                <div class="log-wrapper">
+                    <div class="logo-wrapper">
+                        <img  class="logo" src="../../../assets/G4S.png" alt="">
+                    </div>
+                    <div class="inv-number"> 
+                        <div class="inv-num">
+                            <h5>Invoice No: #6575</h5>
+                        </div>
+
+                        <div class="date">
+                            <p>Date: 11/7/2021</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- Invoice summary -->
+                <div class="inv-sum-box">
+                    <div class="g4s">
+                        <h5>G4S - Info</h5>
+                        <h6>Biller <small>Mutahia john</small></h6>
+                        <h6>Customer Care <small> +2547970552</small></h6>
+                        <h6>Website<small>www.g4s.com</small></h6>
+                    </div>
+                    <div class="payer-info">
+                        <h5>Payer-Information</h5>
+                        <h6>Client Name &nbsp; <small>Daniel Mugwe</small></h6>
+                        <h6>Phone Number &nbsp; <small>+254 797 045 702</small></h6>
+                    </div>
+                </div>
+                <hr>
+                <!-- create invoices and Summary data -->
+                <div class="inv-create">
+                    <div class="inv-header">
+                        <h5>Summary Report</h5>
+                    </div>
+                    <div class="inv-btn">
+                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <span><i class="fas fa-receipt"></i></span>&#160;
+                            <span class="text-data">Pay Invoice</span>
+                        </button>
+                    </div>
+
+                </div>
+                <hr>
+                <!-- recent payments -->
+                <div class="table-wrapper">
+                    <table class="table">
+                        <thead>
+                            <th>Item Name</th>
+                            <th>Basic Amount</th>
+                            <th>Tax</th>
+                            <th>Amount Due</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Test Line</td>
+                                <td>ksh 99</td>
+                                <td>ksh.1</td>
+                                <td>ksh.100</td>
+                            </tr>
+                            <tr>
+                                <td>Test Line2</td>
+                                <td>ksh 99</td>
+                                <td>ksh.1</td>
+                                <td>ksh.100</td>
+                            </tr>
+                            <tr>
+                                <td>Test Line</td>
+                                <td>ksh 99</td>
+                                <td>ksh.1</td>
+                                <td>ksh.100</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <td>Total</td>
+                            <td>ksh. 240</td>
+                            <td>ksh. 200</td>
+                            <td>Ksh. 500</td>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- End-table wrapper -->
+                <!-- modal data design -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                         
+                          <img class="mpesa" src="../../../assets/mpesa.svg" alt="">
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+
+                                <div class="row">
+                                    <div class="col-md-12 ">
+                                        <form [formGroup]="userForm" (ngSubmit)="saveForm()" class="text-center border payment-container p-5">
+
+                                            <div class="form-group">
+                                                <label for="name" style="float:left;"><small>Phone Number</small></label>
+                                                <input formControlName="txtMobile" placeholder="phone number" id="name" type="text" class="form-control" [ngClass]="{'border-danger':getform['txtMobile'].touched && getform['txtMobile'].invalid,
+                                                    'border-success':getform['txtMobile'].dirty && getform['txtMobile'].valid}">
+                                                
+                                                <!-- <span  class="tick" *ngIf="getform['txtMobile'].dirty && getform['txtMobile'].valid"> <i class="fa fa-check" aria-hidden="true"></i></span> -->
+
+                                                <!-- <span *ngIf="getform['txtMobile'].touched && getform['txtMobile'].invalid" class="text-danger">
+                                                    <span class="text-danger" *ngIf="getform['txtMobile'].errors">please Enter correct kenyan phone number like 07** to ten digits </span>
+                                                </span> -->
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="name" style="float:left;">Amount </label>
+                                                <input formControlName="txtAmount" id="name" placeholder="Amount" type="text" class="form-control" [ngClass]="{'border-success':getform['txtAmount'].dirty && getform['txtAmount'].valid,'border-danger':getform['txtAmount'].touched && getform['txtAmount'].invalid
+                                                }">
+
+                                                <!-- <span *ngIf="getform['txtAmount'].touched && getform['txtAmount'].invalid" class="text-danger">
+                                                    <span>please enter a number input</span>
+                                                </span> -->
+                                            </div>
+                                            <div class="modal-footer">
+                                                <!-- <button type="button" class="btn btn-secondary"   style="float:left;" data-bs-dismiss="modal">Exit</button> -->
+                                                <button type="submit" class="btn btn-md btn-pay" [disabled]="!userForm.valid"> <i class="fas fa-money-bill-alt"></i> Pay now</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                      </div>
+                    </div>
+                  </div>
+                <!-- end modal data design -->
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+</main>
+
