@@ -105,28 +105,31 @@
 
                                             <div class="form-group">
                                                 <label for="name" style="float:left;"><small>Phone Number</small></label>
-                                                <input formControlName="txtMobile" placeholder="phone number" id="name" type="text" class="form-control" [ngClass]="{'border-danger':getform['txtMobile'].touched && getform['txtMobile'].invalid,
-                                                    'border-success':getform['txtMobile'].dirty && getform['txtMobile'].valid}">
-                                                
-                                                <!-- <span  class="tick" *ngIf="getform['txtMobile'].dirty && getform['txtMobile'].valid"> <i class="fa fa-check" aria-hidden="true"></i></span> -->
-
-                                                <!-- <span *ngIf="getform['txtMobile'].touched && getform['txtMobile'].invalid" class="text-danger">
-                                                    <span class="text-danger" *ngIf="getform['txtMobile'].errors">please Enter correct kenyan phone number like 07** to ten digits </span>
-                                                </span> -->
+                                                <input formControlName="txtMobile" placeholder="07** *** ***" id="name" type="text" class="form-control" [ngClass]="{'is-valid':getform['txtMobile'].touched && getform['txtMobile'].valid
+                                            ,'is-invalid':getform['txtMobile'].touched && getform['txtMobile'].invalid}">
+                                            <div class="valid-feedback" *ngIf="getform['txtMobile'].touched && getform['txtMobile'].valid">
+                                                Success
+                                            </div>
+                                            <div class="invalid-feedback" *ngIf="getform['txtMobile'].touched && getform['txtMobile'].invalid">
+                                                Please Enter M-Pesa Number
+                                            </div>
+                                            
                                             </div>
                                             <br>
                                             <div class="form-group">
                                                 <label for="name" style="float:left;">Amount </label>
-                                                <input formControlName="txtAmount" id="name" placeholder="Amount" type="text" class="form-control" [ngClass]="{'border-success':getform['txtAmount'].dirty && getform['txtAmount'].valid,'border-danger':getform['txtAmount'].touched && getform['txtAmount'].invalid
-                                                }">
+                                                <input formControlName="txtAmount" id="name" placeholder="Amount" type="text" class="form-control"[ngClass]="{'is-valid':getform['txtAmount'].dirty && getform['txtAmount'].valid,'is-invalid':getform['txtAmount'].touched && getform['txtAmount'].invalid
+                                            }">
+                                            <div class="valid-feedback" *ngIf="getform['txtAmount'].touched && getform['txtAmount'].valid">
+                                                Success : You can edit the amount
+                                            </div>
+                                            <div class="invalid-feedback" *ngIf="getform['txtAmount'].touched && getform['txtAmount'].invalid">
+                                                Please Enter number in format :2123
+                                            </div>
 
-                                                <!-- <span *ngIf="getform['txtAmount'].touched && getform['txtAmount'].invalid" class="text-danger">
-                                                    <span>please enter a number input</span>
-                                                </span> -->
                                             </div>
                                             <div class="modal-footer">
-                                                <!-- <button type="button" class="btn btn-secondary"   style="float:left;" data-bs-dismiss="modal">Exit</button> -->
-                                                <button type="submit" class="btn btn-md btn-pay" [disabled]="!userForm.valid"> <i class="fas fa-money-bill-alt"></i> Pay now</button>
+                                                <button type="submit" class="btn btn-block btn-pay" [disabled]="!userForm.valid"> <i class="fas fa-money-bill-alt"></i> Pay now</button>
                                             </div>
                                         </form>
                                     </div>
@@ -134,7 +137,6 @@
                             </div>
                         </div>
 
-                        
                       </div>
                     </div>
                   </div>
@@ -144,4 +146,3 @@
         </div>
     </div>
 </main>
-

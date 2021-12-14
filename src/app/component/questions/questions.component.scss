@@ -1,0 +1,50 @@
+:root{
+    --color-light: #f5f5fa;
+    --color-light-1: #e3e3e3;
+    --color-black:#1b1d2a;
+    --color-grey:#e1e1e2;
+    --color-grey-1:#bababa;
+    --color-light-blue:#506ef9;
+    --default-shadow:rgba(138,138,138,0.1);
+}
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+}
+
+/* global styles for my app component: */
+html{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Source Sans Pro",Arial,Helvetica,sans-serif;
+    box-sizing: inherit;
+    position: relative;
+    background-color: var(--color-light);
+    padding: 50px;
+}
+.main{
+    background:#fff;
+    box-shadow: 0 15px 10px var(--default-shadow);
+    height: calc(100vh - 100px);
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: [layout-start] minmax(120px,1fr) [center-start] repeat(12,minmax(min-content,95px)) [center-end] minmax(120px,1fr) [layout-end];
+    grid-row-gap: 50px; 
+    grid-template-rows: 120px 1fr;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.header{
+    grid-row: 1 / 2;
+    grid-column:center-start / center-end;
+    display:grid;
+    grid-template-columns: 150px 1fr 200px;
+    align-items: center;
+}
+img{
+    width: 20px;
+    height: 20px;
+}
